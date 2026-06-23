@@ -1,10 +1,4 @@
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
-
+package com.FinTechApp.com.FinTechApp.exceptions;
 public class NotFoundException extends RuntimeException {
-    public NotFoundException(String error) {
-        super(error);
-    }
+    public NotFoundException(String message) { super(message); }
 }

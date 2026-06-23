@@ -1,63 +1,30 @@
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;  
-
-
-
+package com.FinTechApp.com.FinTechApp.exceptions;
+import com.FinTechApp.com.FinTechApp.res.Response;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
 @ControllerAdvice
 public class GlobalExceptionHandler {
-   
-   @ExceptionHandler(Exception.class)
-   public ResponseEntity<Response> handleAllUnkownExceptions(Exception ex) {
-    Response<?> response = Responsee.builder()
-    .statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value())
-    .message(ex.getMessage())
-    .build();
-    return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-   }
-
-
-
-   @ExceptionHandler(NotFoundException.class)
-   public ResponseEntity<Response> handleNotFoundException(NotFoundException ex) {
-    Response<?> response = Responsee.builder()
-    .statusCode(HttpStatus.NOT_FOUND.value())
-    .message(ex.getMessage())
-    .build();
-    return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-   }
-
-
-   @ExceptionHandler(InsufficientFundsException.class)
-   public ResponseEntity<Response> handleInsufficientFundsException(InsufficientFundsException ex) {
-    Response<?> response = Responsee.builder()
-    .statusCode(HttpStatus.BAD_REQUEST.value())
-    .message(ex.getMessage())
-    .build();
-    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-   }
-
-
-   @ExceptionHandler(InvalidTransactionException.class)
-   public ResponseEntity<Response> handleInvalidTransactionException(InvalidTransactionException ex) {
-    Response<?> response = Responsee.builder()
-    .statusCode(HttpStatus.BAD_REQUEST.value())
-    .message(ex.getMessage())
-    .build();
-    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-   }
-
-
-   @ExceptionHandler(BadRequestException.class)
-   public ResponseEntity<Response> handleBadRequestException(BadRequestException ex) {
-    Response<?> response = Responsee.builder()
-    .statusCode(HttpStatus.BAD_REQUEST.value())
-    .message(ex.getMessage())
-    .build();
-    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-   }
-
-
-
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Response<?>> handleAll(Exception ex) {
+        return build(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
+    }
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<Response<?>> handleNotFound(NotFoundException ex) {
+        return build(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+    @ExceptionHandler(InsufficientFundsException.class)
+    public ResponseEntity<Response<?>> handleFunds(InsufficientFundsException ex) {
+        return build(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+    @ExceptionHandler(InvalidTransactionException.class)
+    public ResponseEntity<Response<?>> handleInvalidTx(InvalidTransactionException ex) {
+        return build(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<Response<?>> handleBadRequest(BadRequestException ex) {
+        return build(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+    private ResponseEntity<Response<?>> build(HttpStatus status, String message) {
+        return new ResponseEntity<>(Response.builder().statusCode(status.value()).message(message).build(), status);
+    }
 }

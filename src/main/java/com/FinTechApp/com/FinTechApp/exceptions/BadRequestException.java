@@ -1,9 +1,4 @@
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
+package com.FinTechApp.com.FinTechApp.exceptions;
 public class BadRequestException extends RuntimeException {
-    public BadRequestException(String error) {
-        super(error);
-    }
+    public BadRequestException(String message) { super(message); }
 }

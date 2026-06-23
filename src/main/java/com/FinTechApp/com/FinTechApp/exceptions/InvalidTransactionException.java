@@ -1,8 +1,4 @@
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
+package com.FinTechApp.com.FinTechApp.exceptions;
 public class InvalidTransactionException extends RuntimeException {
-    public InvalidTransactionException(String error) {
-        super(error);
-    }
+    public InvalidTransactionException(String message) { super(message); }
 }

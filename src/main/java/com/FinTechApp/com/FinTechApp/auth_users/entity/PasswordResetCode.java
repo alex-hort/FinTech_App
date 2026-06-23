@@ -1,36 +1,13 @@
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Entity
-@Data
-@Builder
-@Table(name = "password_reset_code")
-@AllArgsConstructor
-@NoArgsConstructor
-
+package com.FinTechApp.com.FinTechApp.auth_users.entity;
+import jakarta.persistence.*;
+import lombok.*;
+import java.time.LocalDateTime;
+@Entity @Data @Builder @Table(name = "password_reset_code") @AllArgsConstructor @NoArgsConstructor
 public class PasswordResetCode {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(unique = true)
-    private String code;
-
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+    @Column(unique = true) private String code;
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "user_id")
-    private User user;
-
-    
+    @JoinColumn(nullable = false, name = "user_id") private User user;
     private LocalDateTime expiryDate;
     private boolean used;
-
-
 }
-
-

@@ -1,4 +1,4 @@
-
+package com.FinTechApp.com.FinTechApp.auth_users.dtos;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,11 +8,9 @@ import java.util.List;
 @Data
 public class RegistrationRequest {
 
-
     @NotBlank(message = "First name is required")
     private String firstName;
 
-   
     private String lastName;
 
     private String phoneNumber;
@@ -21,12 +19,8 @@ public class RegistrationRequest {
     @NotBlank(message = "Email is required")
     private String email;
 
-    
-    private String List<String> roles;
+    private List<String> roles;
 
     @NotBlank(message = "Password is required")
     private String password;
-   
 }
-
-

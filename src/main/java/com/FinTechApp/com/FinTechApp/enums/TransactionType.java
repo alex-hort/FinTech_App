@@ -1,8 +1,2 @@
-
-
-public enum TransactionType {
-    DEPOSIT,
-    WITHDRAWAL,
-    TRANSFER
-    
-}
+package com.FinTechApp.com.FinTechApp.enums;
+public enum TransactionType { DEPOSIT, WITHDRAWAL, TRANSFER }

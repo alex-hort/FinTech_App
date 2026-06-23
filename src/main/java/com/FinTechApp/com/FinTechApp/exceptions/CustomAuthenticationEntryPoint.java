@@ -1,33 +1,26 @@
-
+package com.FinTechApp.com.FinTechApp.exceptions;
+import com.FinTechApp.com.FinTechApp.res.Response;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
-
-
-
-@Component
-@RequiresArgsConstructor
-public class CustomAuthenticationEntryPoint implements  AuthenticationEntryPoint {
-
+import java.io.IOException;
+@Component @RequiredArgsConstructor
+public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
     private final ObjectMapper objectMapper;
-    
     @Override
-    public void commence(
-    HttpServletRequest request, 
-    HttpServletResponse response, 
-    AuthenticationException authException) throws IOException, ServletException {
-        
+    public void commence(HttpServletRequest request, HttpServletResponse response,
+                         AuthenticationException authException) throws IOException, ServletException {
         Response<?> errorResponse = Response.builder()
-        .statusCode(HttpStatus.UNAUTHORIZED.value())
-        .message(authException.getMessage())
-        .build();
-
+            .statusCode(HttpStatus.UNAUTHORIZED.value())
+            .message(authException.getMessage()).build();
         response.setContentType("application/json");
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED.value());
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.getWriter().write(objectMapper.writeValueAsString(errorResponse));
     }
 }
