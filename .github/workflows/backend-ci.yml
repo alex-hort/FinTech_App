@@ -25,12 +25,14 @@ jobs:
           --health-retries=5
 
   
-    env:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/fintech_test
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-      SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
+env:
+      LOCAL_DB_URL: jdbc:mysql://localhost:3306/fintech_test?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      LOCAL_DB_USERNAME: root
+      LOCAL_DB_PASSWORD: root
+      PORT: 8090
       JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      JWT_EXPIRATION: 86400000
+      SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
 
     steps:
       - uses: actions/checkout@v5
