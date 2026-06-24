@@ -1,5 +1,5 @@
 package com.FinTechApp.com.FinTechApp.notification.services;
-
+import com.FinTechApp.com.FinTechApp.notification.entity.Notification;
 import com.FinTechApp.com.FinTechApp.notification.dtos.NotificationDTO;
 import com.FinTechApp.com.FinTechApp.notification.repo.NotificationRepo;
 import com.FinTechApp.com.FinTechApp.auth_users.entity.User;
@@ -49,13 +49,13 @@ public class NotificationServiceImpl implements NotificationService {
             mailSender.send(message);
 
             //savee to database
-            Notification notificationToSave = Notification.builde()
-                    .recipient(notificationDTO.getRecipientEmail())
-                    .subject(notificationDTO.getSubject())
-                    .body(notificationDTO.getBody())
-                    .type(notificationDTO.getType())
-                    .user(user)
-                    .build();
+           Notification notificationToSave = Notification.builder()   // builder, no builde
+        .recipient(notificationDTO.getRecipientEmail())
+        .subject(notificationDTO.getSubject())
+        .body(notificationDTO.getBody())
+        .status(notificationDTO.getType())   // status, no type (coincide con el campo de la entidad)
+        .user(user)
+        .build();
             notificationRepo.save(notificationToSave);
 
         } catch (MessagingException e) {
