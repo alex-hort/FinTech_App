@@ -24,9 +24,8 @@ jobs:
           --health-timeout=5s
           --health-retries=5
 
-  
-env:
-      LOCAL_DB_URL: jdbc:mysql://localhost:3306/fintech_test?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    env:
+      LOCAL_DB_URL: "jdbc:mysql://localhost:3306/fintech_test?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
       LOCAL_DB_USERNAME: root
       LOCAL_DB_PASSWORD: root
       PORT: 8090

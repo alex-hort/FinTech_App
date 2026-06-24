@@ -32,6 +32,8 @@ public class User {
 
     private String password;
     private String profilePictureUrl;
+
+    @Builder.Default
     private boolean active = true;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -45,6 +47,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Account> accounts;
 
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;
 }

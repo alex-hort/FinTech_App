@@ -3,8 +3,13 @@ import com.FinTechApp.com.FinTechApp.notification.enums.NotificationType;
 import com.FinTechApp.com.FinTechApp.auth_users.entity.User;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Builder;
 import java.time.LocalDateTime;
-@Data @Entity @Table(name = "notifications")
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Data @Builder @Entity @Table(name = "notifications")
+@NoArgsConstructor @AllArgsConstructor
 public class Notification {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
     private String subject;
