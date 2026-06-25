@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your New Bank Account</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f4f7fb; font-family:Arial, Helvetica, sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:40px 0;">
+    <tr>
+        <td align="center">
+
+            <table width="600" cellpadding="0" cellspacing="0" border="0"
+                   style="background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+
+                <!-- Header -->
+                <tr>
+                    <td align="center"
+                        style="background:linear-gradient(135deg,#0f172a,#2563eb); padding:40px;">
+
+                        <h1 style="margin:0; color:white; font-size:30px;">
+                            Fintech Bank
+                        </h1>
+
+                        <p style="margin-top:10px; color:#dbeafe;">
+                            Account Successfully Created
+                        </p>
+
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td style="padding:40px;">
+
+                        <h2 style="color:#1e3a8a; margin-top:0;">
+                            Hello, <span th:text="${name}">Customer</span> 👋
+                        </h2>
+
+                        <p style="font-size:16px; color:#4b5563; line-height:1.7;">
+                            Congratulations! Your new
+                            <strong th:text="${accountType}">Checking Account</strong>
+                            has been successfully created and is now ready to use.
+                        </p>
+
+                        <!-- Account Details Card -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                               style="background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; margin-top:25px;">
+
+                            <tr>
+                                <td style="padding:20px;">
+
+                                    <h3 style="margin-top:0; color:#111827;">
+                                        Account Details
+                                    </h3>
+
+                                    <p style="margin:12px 0; color:#374151;">
+                                        <strong>Account Number:</strong>
+                                        <span th:text="${accountNumber}">
+                                            1234567890
+                                        </span>
+                                    </p>
+
+                                    <p style="margin:12px 0; color:#374151;">
+                                        <strong>Account Type:</strong>
+                                        <span th:text="${accountType}">
+                                            Checking
+                                        </span>
+                                    </p>
+
+                                    <p style="margin:12px 0; color:#374151;">
+                                        <strong>Currency:</strong>
+                                        <span th:text="${currency}">
+                                            USD
+                                        </span>
+                                    </p>
+
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <p style="font-size:16px; color:#4b5563; line-height:1.7; margin-top:25px;">
+                            You can now log in to your Fintech Bank account and start managing your finances securely.
+                        </p>
+
+                        <!-- Button -->
+                        <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:35px auto;">
+                            <tr>
+                                <td style="background:#2563eb; border-radius:8px;">
+                                    <a th:href="${loginUrl}"
+                                       href="#"
+                                       style="display:inline-block;
+                                              padding:14px 30px;
+                                              color:white;
+                                              text-decoration:none;
+                                              font-weight:bold;">
+                                        Access My Account
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p style="font-size:15px; color:#6b7280;">
+                            Thank you for choosing Fintech Bank. We look forward to supporting your financial journey.
+                        </p>
+
+                        <p style="margin-top:30px; color:#111827;">
+                            Best regards,<br>
+                            <strong>Fintech Bank Team</strong>
+                        </p>
+
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td align="center"
+                        style="background:#f9fafb; padding:25px; color:#6b7280; font-size:13px;">
+
+                        © 2026 Fintech Bank. All rights reserved.<br>
+                        Secure • Fast • Reliable
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
