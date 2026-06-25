@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Fintech Bank</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f4f7fc; font-family:Arial, Helvetica, sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f7fc; padding:40px 0;">
+    <tr>
+        <td align="center">
+
+            <!-- Main Container -->
+            <table width="600" cellpadding="0" cellspacing="0" border="0"
+                   style="background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+
+                <!-- Header -->
+                <tr>
+                    <td align="center"
+                        style="background:linear-gradient(135deg,#0f172a,#2563eb); padding:50px 30px;">
+
+                        <h1 style="margin:0; color:#ffffff; font-size:34px; font-weight:bold;">
+                            Fintech Bank
+                        </h1>
+
+                        <p style="margin-top:12px; color:#dbeafe; font-size:16px;">
+                            Modern Banking. Simplified.
+                        </p>
+
+                    </td>
+                </tr>
+
+                <!-- Welcome Section -->
+                <tr>
+                    <td style="padding:40px;">
+
+                        <h2 style="margin-top:0; color:#1e3a8a; font-size:28px;">
+                            Welcome, <span th:text="${name}">Customer</span> 👋
+                        </h2>
+
+                        <p style="font-size:16px; line-height:1.8; color:#374151;">
+                            Thank you for choosing <strong>Fintech Bank</strong>.
+                            Your account has been successfully created and is now ready to use.
+                        </p>
+
+                        <p style="font-size:16px; line-height:1.8; color:#374151;">
+                            We are committed to providing a secure, fast, and modern banking experience that helps you manage your finances with confidence.
+                        </p>
+
+                        <!-- Features -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:25px;">
+                            <tr>
+                                <td style="padding:10px 0; font-size:16px; color:#374151;">
+                                    💳 Manage your accounts anytime, anywhere
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 0; font-size:16px; color:#374151;">
+                                    ⚡ Send and receive money instantly
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 0; font-size:16px; color:#374151;">
+                                    📊 Track transactions in real time
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 0; font-size:16px; color:#374151;">
+                                    🔒 Enjoy advanced security and fraud protection
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Button -->
+                        <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin:35px auto;">
+                            <tr>
+                                <td align="center"
+                                    style="background:#2563eb; border-radius:10px;">
+                                    <a href="https://your-domain.com/login"
+                                       style="display:inline-block;
+                                              padding:15px 35px;
+                                              color:#ffffff;
+                                              text-decoration:none;
+                                              font-size:16px;
+                                              font-weight:bold;">
+                                        Access My Account
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Message -->
+                        <p style="font-size:15px; line-height:1.8; color:#6b7280;">
+                            If you have any questions or need assistance, our support team is always available to help.
+                        </p>
+
+                        <p style="font-size:15px; line-height:1.8; color:#6b7280;">
+                            We are excited to be part of your financial journey.
+                        </p>
+
+                        <p style="margin-top:30px; color:#111827; font-size:16px;">
+                            Best regards,<br>
+                            <strong>Fintech Bank Team</strong>
+                        </p>
+
+                    </td>
+                </tr>
+
+                <!-- Security Notice -->
+                <tr>
+                    <td style="background:#f8fafc; padding:25px 40px; border-top:1px solid #e5e7eb;">
+
+                        <p style="margin:0; color:#64748b; font-size:13px; line-height:1.7;">
+                            Security Notice: Fintech Bank will never ask for your password,
+                            verification codes, or sensitive banking information by email.
+                        </p>
+
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td align="center"
+                        style="background:#111827; padding:30px;">
+
+                        <p style="margin:0; color:#9ca3af; font-size:13px;">
+                            © 2026 Fintech Bank. All Rights Reserved.
+                        </p>
+
+                        <p style="margin-top:10px; color:#6b7280; font-size:12px;">
+                            Secure • Fast • Reliable
+                        </p>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

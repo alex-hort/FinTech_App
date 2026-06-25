@@ -10,10 +10,12 @@ import java.util.Map;
 public class NotificationDTO {
     private Long id;
     private String subject;
-    @NotBlank(message = "Recipient email is required") private String recipientEmail;
+    @NotBlank(message = "Recipient email is required") 
+    private String recipientEmail;
     private String body;
     private NotificationType type;
     private LocalDateTime createdAt;
     private String templateName;
     private Map<String, Object> templateVariables;
+    
 }

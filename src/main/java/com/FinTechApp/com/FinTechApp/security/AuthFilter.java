@@ -59,7 +59,7 @@ public class AuthFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(request, response);
         } catch (Exception e) {
-            log.error(e.getMessage());
+             log.error(e.getMessage());
         }
     }
 
@@ -70,4 +70,8 @@ public class AuthFilter extends OncePerRequestFilter {
         }
         return null;
     }
+    @Override
+protected boolean shouldNotFilter(HttpServletRequest request) {
+    return request.getServletPath().startsWith("/api/auth/");
+}
 }
