@@ -1,4 +1,4 @@
-
+package com.FinTechApp.com.FinTechApp.transaction.dtos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import com.FinTechApp.com.FinTechApp.enums.TransactionType;
