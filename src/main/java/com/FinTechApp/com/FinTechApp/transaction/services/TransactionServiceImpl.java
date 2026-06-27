@@ -30,7 +30,6 @@ import org.modelmapper.ModelMapper;
 import com.FinTechApp.com.FinTechApp.transaction.entity.Transaction;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.event.TransactionalEventListener;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +44,6 @@ public class TransactionServiceImpl implements TransactionService {
     private final NotificationService notificationService;
     private final UserService userService;
     private final ModelMapper modelMapper;
-    private final Account account;
 
     @Override
     @Transactional
